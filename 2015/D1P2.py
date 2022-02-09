@@ -9,7 +9,7 @@ try:
         
         if currentFloor == -1:
             print(i)
-
+            break
         if line[i] == '(':
             currentFloor = currentFloor + 1
         else:
