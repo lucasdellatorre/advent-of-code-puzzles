@@ -10,9 +10,9 @@ def main
 end
 
 def wins(p1, p2)
-    s = p1.to_i + p2.to_i
+    s = p1 + p2
     sum = 0
-    case 
+    case
     when s == "AX" || s == "BY" || s == "CZ"
         sum = $dic["D"]
     when s == "AZ" || s == "BX" || s == "CB"
