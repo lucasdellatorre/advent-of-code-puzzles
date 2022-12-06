@@ -1,7 +1,7 @@
 def main
   matrix = []
   instructions = []
-  File.open('example.txt').each do |line|
+  File.open('input.txt').each do |line|
     magic_string = ''
     cell = []
     if line[0, 4] == 'move'
@@ -46,12 +46,12 @@ end
 
 def solve(matrix, instructions)
   instructions.each do |arr|
-    p arr
+    aux = []
     move = arr[0]
     from = arr[1] - 1
     to = arr[2] - 1
-    move.times { matrix[to].unshift(matrix[from].shift) }
-    p matrix
+    move.times { aux << matrix[from].shift }
+    matrix[to] = aux + matrix[to]
   end
   result = ''
   matrix.each { |arr| result += arr.first }
