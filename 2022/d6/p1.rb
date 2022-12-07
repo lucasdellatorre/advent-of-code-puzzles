@@ -10,10 +10,9 @@ pos = 0
 
     set << s[j]
     if set.length == 4
-      puts j
+      puts j + 1
       break
     end
   end
   break if set.length == 4
 end
-p pos + 1
