@@ -7,21 +7,20 @@ res = 0
 
 def is_invalid(id):
     n = len(id)
+    w_limit = (n // 2) + 1
     invalid = True
-    if n % 2 == 1:
-        return False
-    window_size = n // 2
 
-    window = id[0:window_size]
+    for window_size in range(1, w_limit):
+        window = id[0:window_size]
 
-    for w in range(window_size, n, window_size):
-        if window != id[w : w + window_size]:
-            invalid = False
-            break
-        else:
-            invalid = True
-    if invalid:
-        return True
+        for w in range(window_size, n, window_size):
+            if window != id[w : w + window_size]:
+                invalid = False
+                break
+            else:
+                invalid = True
+        if invalid:
+            return True
 
     return False
 
